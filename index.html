@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aokigahara Project</title>
+
+    <!--сброс предустановленных стилей-->
+    <link rel="stylesheet" href="styles/reset.css">
+    <!--подключение шрифтов-->
+    <link rel="stylesheet" href="styles/fonts.css">
+    <!--основные стили страницы-->
+    <link rel="stylesheet" href="styles/main.css">
+    <!--адаптивные стили страницы-->
+    <link rel="stylesheet" href="styles/media.css">
+
+</head>
+<body>
+<section class="layers">
+    <div class="layers__container">
+        <div class="layers__item layer-1" style="background-image: url(img/layer-1.jpg)"></div>
+        <div class="layers__item layer-2" style="background-image: url(img/layer-2.png)"></div>
+        <div class="layers__item layer-3">
+            <div class="hero-content">
+                <h1 class="unselectable">青木ヶ原</h1>
+                <div class="hero-content__p unselectable">樹海からは抜け出せない</div>
+                <button class="button-start unselectable">今すぐスタート</button>
+            </div>
+        </div>
+        <div class="layers__item layer-4">
+            <canvas class="rain"></canvas>
+        </div>
+        <div class="layers__item layer-5" style="background-image: url(img/layer-5.png)"></div>
+        <div class="layers__item layer-6" style="background-image: url(img/layer-6.png)"></div>
+    </div>
+</section>
+
+<!--основной файл скриптов-->
+<script src="scripts/script.js"></script>
+<script src="libs/rain.js"></script>
+</body>
+</html>

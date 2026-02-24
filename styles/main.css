@@ -1,0 +1,117 @@
+/*переменные*/
+:root {
+    --title-font: "Noto Sans JP", sans-serif;
+    --description-font: "Noto Serif JP", sans-serif;
+    --button-font: "YuGoth B", sans-serif;
+
+    --index: calc(1vw + 1vh);
+    --transition: 1.4s cubic-bezier(.05, .5, 0, 1);
+}
+
+/* .. переменные*/
+
+/*общие настройки*/
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+.unselectable {
+    -webkit-user-select: none; /* Safari, Chrome, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10+, Edge */
+    user-select: none;         /* Стандарт */
+}
+
+.hero-content {
+    text-align: center;
+}
+
+h1, .hero-content__p, button {
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: var(--title-font);
+    font-size: calc(var(--index) * 8);
+    letter-spacing: calc(var(--index) * -.15);
+    margin-bottom: calc(var(--index) * 2.3);
+}
+
+.hero-content__p {
+    font-family: var(--description-font);
+    font-size: calc(var(--index) * 1.2);
+    margin-bottom: calc(var(--index) * 2.3);
+}
+
+button {
+    font-family: var(--button-font);
+    font-size: calc(var(--index) * 1.01);
+    border: 2px solid rgba(255, 255, 255, 0.49);
+    border-radius: 10em;
+    padding: calc(var(--index) * 0.6) calc(var(--index) * 1.6);
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* .. общие настройки*/
+
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.layers__container {
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+
+.layers__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*расположение слоев*/
+.layer-1 {
+    transform: translateZ(-55px) scale(1.06);
+}
+
+.layer-2 {
+    transform: translateZ(80px) scale(.88);
+}
+
+.layer-3 {
+    transform: translateZ(180px) scale(.8);
+}
+
+.layer-4 {
+    transform: translateZ(190px) scale(.9);
+}
+
+.layer-5 {
+    transform: translateZ(300px) scale(.9);
+}
+
+.layer-6 {
+    transform: translateZ(380px);
+}
+
+/* .. расположение слоев*/
+.layer-4, .layer-5, .layer-6 {
+    pointer-events: none;
+}
